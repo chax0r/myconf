@@ -1,3 +1,5 @@
+set nocompatible
+filetype plugin on
 syntax on
 " let mapleader = ","
 set autoindent
@@ -18,6 +20,8 @@ set laststatus=2
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
 map <F2> :NERDTreeToggle<CR>
 inoremap ;; <esc>
+
+" Tab settings
 map <leader>num : set number<CR>
 map <leader>non : set nonumber<CR>
 map <leader>Tab :tabprev<CR>
@@ -31,6 +35,14 @@ map <leader>6 :tabn 6<CR>
 map <leader>7 :tabn 7<CR>
 map <leader>8 :tabn 8<CR>
 map <leader>9 :tabn 9<CR>
-nmap <leader>w :tabclose<CR>
+nmap <leader>c :tabclose<CR>
 nmap <leader>t :tabnew<CR>
 nmap<leader>o : tabonly<CR>
+nmap<leader>w : w<CR>
+nmap<leader>q : q!<CR>
+
+" Folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
